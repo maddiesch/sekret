@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'sekret'
+require 'pry'
+
+Sekret.configure do |config|
+  config.mac_secret = 'Super Sekret Passwordz'
+  config.public_key = File.read(Pathname.new(__dir__).join('..', 'spec', 'support', 'keys', 'public.pem'))
+  config.private_key = File.read(Pathname.new(__dir__).join('..', 'spec', 'support', 'keys', 'private.pem'))
+end
+
+Pry.start

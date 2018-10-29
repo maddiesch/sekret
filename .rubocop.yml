@@ -1,0 +1,77 @@
+AllCops:
+  TargetRubyVersion: 2.5
+
+##
+## Layout
+##
+Layout/SpaceAroundOperators:
+  Enabled: false
+
+##
+## Linting
+##
+Lint/AmbiguousRegexpLiteral:
+  Enabled: true
+  Exclude:
+    - spec/**/*
+
+##
+## Metrics
+##
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/LineLength:
+  Max: 120
+  Exclude:
+    - Gemfile
+    - sekret.gemspec
+    - spec/**/*
+
+Metrics/ParameterLists:
+  Max: 12
+
+Metrics/MethodLength:
+  Max: 16
+
+Metrics/CyclomaticComplexity:
+  Max: 8
+
+Metrics/PerceivedComplexity:
+  Max: 8
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - sekret.gemspec
+    - spec/**/*
+
+##
+## Style
+##
+Style/GuardClause:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+##
+## Naming
+##
+Naming/HeredocDelimiterNaming:
+  Enabled: false

@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require 'sekret'
+require 'sekret/cli'
+
+begin
+  Sekret::CLI.run(ARGV)
+rescue StandardError => error
+  STDERR.puts error.message
+  exit(1)
+end
+
+exit(0)
