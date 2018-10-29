@@ -1,3 +1,6 @@
+require 'erb'
+require 'pathname'
+
 module Sekret
   module CLI
     ##
@@ -29,8 +32,12 @@ module Sekret
         case command
         when 'generate-keys'
           perform_generate_keys
+        when 'help'
+          print_help
+        when 'version'
+          print_version
         else
-          raise "Unknown Command #{command}"
+          raise "Unknown Command #{command}. Try `sekret help`"
         end
       end
 
@@ -45,6 +52,17 @@ module Sekret
            Public Key
            #{keys.public_key}
         EOF
+      end
+
+      def print_help
+        path = ::Pathname.new(__dir__).join('help.txt.erb')
+        content = File.read(path)
+        template = ERB.new(content)
+        STDOUT.puts(template.result)
+      end
+
+      def print_version
+        STDOUT.puts(Sekret::VERSION)
       end
     end
   end
