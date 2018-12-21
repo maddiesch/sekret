@@ -7,7 +7,7 @@ There are a few config options.
 
 ```ruby
 Sekret.configure do |config|
-  config.mac_sekret = 'Super Sekret'
+  config.mac_secret = 'Super Sekret'
   config.public_key = File.read('path to public pem')
   config.private_key = File.read('path to private pem')
 end
